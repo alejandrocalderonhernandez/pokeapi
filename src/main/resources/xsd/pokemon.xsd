@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.javaspringclub.com/movies-ws"
+	targetNamespace="http://www.javaspringclub.com/movies-ws"
+	elementFormDefault="qualified">
+ 
+    <xs:element name="PokemonDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 
+    <xs:element name="PokemonDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Pokemon" type="tns:Pokemon"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 
+    <xs:complexType name="Pokemon">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="baseExperience" type="xs:string"/>
+            <xs:element name="locationAreaEncounters" type="xs:string"/>
+        </xs:sequence> 
+    </xs:complexType>
+</xs:schema>
