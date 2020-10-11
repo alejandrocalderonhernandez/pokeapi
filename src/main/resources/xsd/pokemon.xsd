@@ -26,6 +26,7 @@
             <xs:element name="baseExperience" type="xs:string"/>
             <xs:element name="locationAreaEncounters"/>
             <xs:element name="abilities" type="tns:abstractModel"/>
+            <xs:element name="heldItems" type="tns:HeldItems"/>
         </xs:sequence>
     </xs:complexType>
 
