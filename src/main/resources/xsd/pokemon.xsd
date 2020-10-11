@@ -18,13 +18,36 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
- 
+
     <xs:complexType name="Pokemon">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="baseExperience" type="xs:string"/>
-            <xs:element name="locationAreaEncounters" type="xs:string"/>
-        </xs:sequence> 
+            <xs:element name="locationAreaEncounters"/>
+            <xs:element name="abilities" type="tns:abstractModel"/>
+        </xs:sequence>
     </xs:complexType>
+
+    <xs:complexType name="HeldItems">
+                <xs:sequence>
+                    <xs:element name="item" type="tns:abstractModel"/>
+                    <xs:element name="versionDetails" type="tns:VersionDetails"/>
+                </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VersionDetails">
+        <xs:sequence>
+            <xs:element name="rarity" type="xs:integer"/>
+            <xs:element name="version" type="tns:abstractModel"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="abstractModel">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>
