@@ -18,6 +18,12 @@ public class PokemonDTO {
 	@JsonProperty("location_area_encounters")
 	private String locationAreaEncounters;
 	
+	public PokemonDTO(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+
 	public PokemonDTO() {
 	}
 	

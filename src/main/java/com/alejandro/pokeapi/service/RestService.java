@@ -13,9 +13,13 @@ import com.alejandro.pokeapi.util.Constants;
 
 @Service
 public class RestService implements IRestService{
-	
-	@Autowired
+
 	public RestTemplate restTemplate;
+
+	@Autowired
+	public RestService(RestTemplate restTemplate){
+		this.restTemplate = restTemplate;
+	}
 	
 	public ResponseEntity<PokemonDTO> getByPokemonName(String name) {
 		Map<String, Object> params = this.setParam(name);
